@@ -9,7 +9,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mycompany.progra3api.git.fxml.MainController"
+            fx:controller="com.mycompany.progra3api.git.fxml.fxmlControler"
             prefWidth="950" prefHeight="550"
             style="-fx-background-color: #f4f6f8;">
 

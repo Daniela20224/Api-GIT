@@ -6,8 +6,6 @@ module com.mycompany.progra3api.git {
     requires java.base;
 
     exports com.mycompany.progra3api.git;
-    
-    
     exports com.mycompany.progra3api.git.domain;
     exports com.mycompany.progra3api.git.service;
     exports com.mycompany.progra3api.git.fxml;
