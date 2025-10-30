@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.progra3api.git.fxml.MainController"
+            prefWidth="950" prefHeight="550"
+            style="-fx-background-color: #f4f6f8;">
+
+    <!-- TOP: barra superior -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12"
+              style="-fx-background-color: #2c3e50;"
+              prefHeight="60">
+            <padding>
+                <Insets left="20" right="20"/>
+            </padding>
+            <Label text="GitHub Explorer"
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Usuario:"
+                   style="-fx-text-fill: white;"/>
+            <TextField fx:id="txtUsername"
+                       prefWidth="200"
+                       promptText="Ingrese usuario..."/>
+            <Button fx:id="btnBuscar"
+                    text="Buscar"
+                    onAction="#onBuscar"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Label fx:id="lblStatus"
+                   style="-fx-text-fill: #2ecc71; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT: panel con info del usuario -->
+    <left>
+        <VBox spacing="10"
+              style="-fx-background-color: #34495e;"
+              alignment="TOP_CENTER"
+              prefWidth="250">
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+
+            <ImageView fx:id="imgAvatar" fitWidth="140" fitHeight="140" preserveRatio="true"
+                       style="-fx-border-color: white; -fx-border-width: 2; -fx-border-radius: 5;"/>
+
+            <Label fx:id="lblName" wrapText="true"
+                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label fx:id="lblBio" wrapText="true" style="-fx-text-fill: #bdc3c7;"/>
+            <Separator/>
+            <Label fx:id="lblLocation" style="-fx-text-fill: white;"/>
+            <Label fx:id="lblFollowers" style="-fx-text-fill: white;"/>
+            <Label fx:id="lblCreated" style="-fx-text-fill: white;"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER: datos principales -->
+    <center>
+        <VBox spacing="15" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Repositorios públicos"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="tblRepos" prefHeight="260" style="-fx-background-color: white;">
+                <columns>
+                    <TableColumn fx:id="colName" text="Nombre" prefWidth="300"/>
+                    <TableColumn fx:id="colDesc" text="Lenguaje" prefWidth="200"/>
+                </columns>
+            </TableView>
+
+            <Separator/>
+            <Label text="Distribución de lenguajes"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <PieChart fx:id="chartLanguages" prefHeight="200" prefWidth="400"/>
+        </VBox>
+    </center>
+
+</BorderPane>
